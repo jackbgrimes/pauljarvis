@@ -1,0 +1,305 @@
+/**
+ * Plugin Name:       CPJ Calendar Scheduler
+ * Description:       This block displays calendar to pick date then displays time available for booking
+ * Requires at least: 6.1
+ * Requires PHP:      7.0
+ * Version:           0.1.0
+ * Author:            Paul Jarvis
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       cpj-calendar-schedule
+ *
+ * @package           cpj-calendar-schedule
+ */
+
+.wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
+    width:50%;
+    margin:10px;
+
+}
+.wp-block-cpj-calendar-schedule-cpj-calendar-schedule::after{
+    content:'';
+    clear:both;
+    display:table;
+}
+ .cpj-calendar-box{
+    width:250px;
+    border:2px solid #333333;
+    border-radius:10px;
+
+ }
+ .cal-header{
+    width:100%;
+    padding:0;
+    margin-left:10px;
+ }
+ .cal-header{
+    margin:0px auto;
+    text-align:center;
+ }
+.calendar-header{
+    width:228px;;
+    padding:10px;
+    border:2px solid #333333;
+    border-width:0px 0px 2px 0px;
+}
+.prev-mon-btn{
+    float:left;
+    margin:0px;
+    margin-right:20px;
+    border:1px solid #333333;
+    border-radius:5px;
+    width:25px;
+    text-align:center;
+    
+}
+.mon-title{
+    float:left;
+    color:#112244;
+}
+
+.next-mon-btn{
+    float:right;
+    border:1px solid #333333;
+    border-radius:5px;
+    width:25px;
+    text-align:center;
+}
+.next-mon-btn:hover,.prev-mon-btn:hover{
+    font-weight:bold;
+    cursor:pointer;
+   background-color:#b4bdcd;
+}
+.calendar-header::after{
+    content:'';
+    clear:both;
+    display:table;
+}
+.dow-header{
+    width:100%;
+    padding:4px;
+    border:1px solid #333333;
+    border-width: 0px 0px 2px 0px;
+}
+.dow-title{
+    width:45px;
+   
+    margin:0px;
+    text-align:center;
+    font-size:12px;
+    color:#112244;
+}
+.dow-header::after{
+    content:'';
+    clear:both;
+    display:table;
+}
+.mon-days{
+   /* width:35px;*/
+   background-color: #7595c2;
+    border:1px solid #333333;
+    border-radius:5px;
+ /*   margin:3px; */
+    text-align:center;
+}
+.mon-days:hover{
+    cursor:pointer;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.7);
+    background-color:#f5f1b1;
+}
+.mon-days-today{
+    background-color:#f5f1b1 !important;
+   
+}
+
+.cpj-time-box{
+   
+    margin:10px;
+    width:300px;
+    margin-left:30px;
+ }
+ .cpj-time-box::after{
+    content:'';
+    clear:both;
+    display:table;
+
+ }
+ .time-btn{
+    width:60px;
+    font-size:14px;
+    line-height:18px;
+    text-align:center;
+    border:1px solid #333333;
+    border-radius:5px;
+    background-color: #b4bdcd;
+    margin:4px;
+ }
+ .time-btn:hover{
+    background-color:#75a1e8;
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+    cursor:pointer;
+ }
+ .time-btn-disabled{
+    background-color:#747171;
+    color:rgb(138, 140, 142);
+    text-decoration: line-through;
+    width:60px;
+    font-size:14px;
+    line-height:18px;
+    text-align:center;
+    border:1px solid #333333;
+    border-radius:5px;
+    margin:4px;
+}
+ .pick-a-date{
+    margin-left:20px;
+    color:#112244;
+ }
+#pick-a-time-text{
+    margin-left:10px;
+    display:none;
+ }
+ .outer-cal-box, .outer-time-box{
+    float:left;
+    margin:5px;
+    color:#112244;
+ }
+ .time-btn-sel{
+    background-color:#75a1e8;
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+
+ }
+ #pick-a-date-holder,#pick-a-time-holder{
+    color:#ececec;
+    margin-left:3px;
+ }
+ .next-btn{
+    width:120px;
+    height:40px;
+    border:2px solid #33528f;
+    border-radius:6px;
+    background-color:#75a1e8;
+    color:#252429;
+    font-size:18px;
+    line-height:42px;
+    display:none;
+    text-align:center;
+    margin:20px auto;
+    vertical-align: center;
+    
+ }
+ .next-btn:hover{
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+    cursor:pointer;
+ }
+ .form-row::after{
+    content:'';
+    clear:both;
+    display:table;
+ }
+ label{
+    font-size:16px;
+    line-height:18px;
+    color:#252222;
+    margin:10px;
+    float:left;
+    width:150px;
+ }
+.input-box{
+    float:left;
+    margin:4px;
+}
+.cust-form-input{
+    width:200px;
+    height:30px;
+    font-size:14px;
+    line-height:18px;
+    border-radius:6px;
+    background-color:#f5f1b1;
+}
+#cpj-cust-form-box{
+    width:80%;
+    margin:20px auto;
+}
+select{
+    width:150px;
+    border:1px solid #333333;
+    border-width:2px 0px 0px 2px;
+    border-radius:10px;
+    height:26px;
+}
+option{
+    font-size:14px;
+    line-height:18px;
+}
+#cpj-cust-form-submit-btn{
+    margin:10px 0px 10px 200px;
+    width:120px;
+    height:40px;
+    border:2px solid #33528f;
+    border-radius:6px;
+    background-color:#75a1e8;
+    color:#252429;
+    font-size:18px;
+    line-height:22px;
+    display:inline;
+    text-align:center;
+    vertical-align: center;
+}
+#submit-btn:hover{
+    cursor:pointer;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    
+}
+#error-msg-box{
+    font-size:13px;
+    line-height:15px;
+    color:rgb(183, 41, 41);
+    margin-left:120px;
+}
+#confirm-msg-box{
+    margin:20px auto;
+    width:75%;
+    min-height:200px;
+}
+#cpj-ajax-loader-gif{
+    width:90px;
+    height:auto;
+    margin:10px auto;
+}
+@media only screen and (max-width:480px){
+    .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
+        width:90%;
+        margin:5px auto;
+    }
+    .cpj-calendar-box{
+        margin-left:40px;
+    }
+    #cpj-cust-form-submit-btn{
+        margin-left:100px;
+    }
+    #error-msg-box{
+        margin-left:10px;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:780px){
+    .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
+        width:50%;
+        margin:5px auto;
+    }
+    .cpj-calendar-box{
+        margin-left:40px;
+    }
+ 
+}
+@media only screen and (min-width:781px) and (max-width:1040px){
+    .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
+        width:80%;
+        margin:5px auto;
+    }
+    .cpj-calendar-box{
+        margin-left:40px;
+    }
+
+}

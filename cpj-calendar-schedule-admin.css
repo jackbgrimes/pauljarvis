@@ -1,0 +1,57 @@
+/*************
+ * CSS File for admin stylesheets for CPJ Schedule Plugin
+ * Author: Paul Jarvis
+ * ver: 0.1.0
+ * License: gpl. gnu
+ */
+
+ .schedule-email-options-outer-box{
+    width:80%;
+    margin:20px auto;
+ }
+ .schedule-email-options-outer-box::after{
+    content:'';
+    clear:both;
+    display:table;
+ }
+ .email-box-left, .email-box-right{
+    width:40%;
+    margin:14px;
+    padding:10px;
+    float:left;
+    border:1px solid #333333;
+    border-radius:10px;
+ }
+ .editor-box{
+    width:85%;
+    margin:5px auto;
+ }
+ #email-content-submit, #notify-email-submit,#appt-from-email-submit{
+    width:150px;
+    height:30px;
+    border:1px solid #333333;
+    border-radius:5px;
+    background-color:#43465b;
+    color:#fefefe;
+    text-align:center;
+    font-size:16px;
+    line-height:20px;
+    margin:10px auto;
+    margin-left:250px;
+ }
+#notify-email,#appt-email-from-field-display-name,#appt-email-from-field{
+    width:220px;
+    border:1px solid #333333;
+    border-radius:6px;
+    font-size:16px;
+    line-height:20px;
+
+}
+.subject-line-box{
+    width:85%;
+    margin:5px auto;
+
+}
+#lpm-confirm-appt-subject{
+    width:350px;
+}
